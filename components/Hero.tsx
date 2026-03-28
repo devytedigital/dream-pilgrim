@@ -22,22 +22,20 @@ const Hero = () => {
   }, []);
 
   return (
-    <section
-      className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center text-white"
-    >
+    <section className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center text-white">
       {/* Persistent Background Stack */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {IMAGES.map((src, index) => (
           <motion.div
             key={index}
             initial={false}
-            animate={{ 
+            animate={{
               opacity: index === currentImg ? 1 : 0,
-              scale: index === currentImg ? 1.05 : 1
+              scale: index === currentImg ? 1.05 : 1,
             }}
-            transition={{ 
+            transition={{
               opacity: { duration: 2, ease: "easeInOut" },
-              scale: { duration: 10, ease: "linear" }
+              scale: { duration: 10, ease: "linear" },
             }}
             className="absolute inset-0"
           >
@@ -58,7 +56,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1], delay: 0.5 }}
-          className="text-[clamp(6rem,18vw,16rem)] leading-[0.85] tracking-[-0.04em] font-spectral drop-shadow-2xl uppercase"
+          className="text-[clamp(6rem,18vw,16rem)] leading-[0.85] tracking-[-0.04em] font-spectral drop-shadow-2xl"
         >
           Travel
         </motion.h1>

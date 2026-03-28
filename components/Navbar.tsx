@@ -60,7 +60,7 @@ const Navbar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
               }`}
             />
           </div>
-          Visa Travels
+          Dream Pilgrim
         </a>
 
         <ul className="hidden lg:flex gap-8">
