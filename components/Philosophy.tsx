@@ -38,18 +38,24 @@ const Philosophy = () => {
             </div>
           </div>
 
-          {/* Right Column: Arched Image Profile */}
+          {/* Right Column: Arched Image Profile - High-End Reveal */}
           <div className="relative order-1 md:order-2 flex justify-end">
-            <div className="relative w-full max-w-[580px] aspect-[10/14] rounded-t-[500px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] group">
+            <motion.div
+              initial={{ opacity: 0, clipPath: "inset(0% 100% 0% 0%)" }}
+              whileInView={{ opacity: 1, clipPath: "inset(0% 0% 0% 0%)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
+              className="relative w-full max-w-[580px] aspect-[10/14] rounded-t-[500px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] group"
+            >
               <Image
                 src="https://res.cloudinary.com/ditmvxlon/image/upload/v1774639289/oliver-sjostrom-CihXnvELE00-unsplash_zqr8yj.jpg"
                 alt="Dream Pilgrim Experience"
                 fill
                 priority
-                className="object-cover transition-transform duration-1000"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-[#111111]/5" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
