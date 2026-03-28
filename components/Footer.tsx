@@ -7,12 +7,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#111111] text-white pt-20 md:pt-32 pb-10 md:pb-12 px-6 md:px-12 font-manrope overflow-hidden">
+    <footer className="bg-[#111111]  text-white pt-20 md:pt-32 pb-10 md:pb-12 px-6 md:px-12 font-manrope overflow-hidden">
       <div className="max-w-[1500px] mx-auto">
-        
         {/* Top Section: Hero Heading & Nav Links Split */}
         <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between gap-12 lg:gap-24 mb-20 md:mb-32">
-          
           {/* Brand Identity - Left Column */}
           <div className="flex flex-col">
             <h2 className="text-[clamp(3.5rem,10vw,12rem)] font-normal font-spectral tracking-tight leading-[0.85] text-white whitespace-nowrap">

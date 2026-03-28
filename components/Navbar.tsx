@@ -9,6 +9,7 @@ const Navbar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
   const navRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isFooterInView, setIsFooterInView] = useState(false);
 
   useEffect(() => {
     if (!navRef.current) return;
@@ -19,17 +20,32 @@ const Navbar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
       { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
     );
 
+    // Track scroll for basic sticky states
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
+    // Track intersection with footer for theme switching
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFooterInView(entry.isIntersecting);
+      },
+      { threshold: 0.1, rootMargin: "-10% 0px 0px 0px" } // Detect before it fully hits
+    );
+
+    const footer = document.querySelector("footer");
+    if (footer) observer.observe(footer);
+
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (footer) observer.unobserve(footer);
+    };
   }, []);
 
-  const isDark = (variant === "dark" || isScrolled) && !open;
+  const isDark = (variant === "dark" || isScrolled) && !isFooterInView && !open;
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -77,7 +93,9 @@ const Navbar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
         </ul>
 
         <button
-          className="lg:hidden p-2 -mr-2"
+          className={`lg:hidden p-2 -mr-2 transition-all duration-500 font-manrope ${
+            isDark ? "text-[#111111]" : "text-white"
+          }`}
           onClick={() => setOpen(true)}
           aria-label="Open Menu"
         >
