@@ -7,7 +7,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#111111]  text-white pt-20 md:pt-32 pb-10 md:pb-12 px-6 md:px-12 font-manrope overflow-hidden">
+    <footer id="footer" className="bg-[#111111]  text-white pt-20 md:pt-32 pb-10 md:pb-12 px-6 md:px-12 font-manrope overflow-hidden">
       <div className="max-w-[1500px] mx-auto">
         {/* Top Section: Hero Heading & Nav Links Split */}
         <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between gap-12 lg:gap-24 mb-20 md:mb-32">
@@ -29,7 +29,7 @@ const Footer = () => {
                 {[
                   { name: "Home", href: "/" },
                   { name: "Packages", href: "/packages" },
-                  { name: "About", href: "#" },
+                  { name: "About", href: "/about" },
                 ].map((item) => (
                   <li key={item.name}>
                     <a

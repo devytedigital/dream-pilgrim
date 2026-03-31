@@ -22,7 +22,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center text-white">
+    <section id="hero" className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center text-white">
       {/* Persistent Background Stack */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {IMAGES.map((src, index) => (

@@ -9,7 +9,7 @@ const Navbar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
   const navRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [isFooterInView, setIsFooterInView] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("hero");
 
   useEffect(() => {
     if (!navRef.current) return;
@@ -25,27 +25,59 @@ const Navbar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    // Track intersection with footer for theme switching
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsFooterInView(entry.isIntersecting);
-      },
-      { threshold: 0.1, rootMargin: "-10% 0px 0px 0px" } // Detect before it fully hits
-    );
+    // Advanced Section Observer for Navbar Theme
+    const observerOptions = {
+      root: null,
+      rootMargin: "-10% 0px -85% 0px", // Detect what's roughly under the top 15% of the viewport
+      threshold: 0,
+    };
 
-    const footer = document.querySelector("footer");
-    if (footer) observer.observe(footer);
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const sections = [
+      "hero",
+      "featured-packages",
+      "philosophy",
+      "luxury-banner",
+      "footer",
+      "about-hero",
+      "about-story",
+      "about-values",
+      "about-cta",
+      "all-packages",
+    ];
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (footer) observer.unobserve(footer);
+      observer.disconnect();
     };
   }, []);
 
-  const isDark = (variant === "dark" || isScrolled) && !isFooterInView && !open;
+  const isDark =
+    (variant === "dark" ||
+      activeSection === "featured-packages" ||
+      activeSection === "philosophy" ||
+      activeSection === "about-story" ||
+      activeSection === "about-values" ||
+      activeSection === "all-packages") &&
+    !open;
+
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -150,7 +182,7 @@ const Navbar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
 
                 <div className="space-y-12">
                   <div className="space-y-4">
-                    <p className="text-[10px] uppercase tracking-[0.2em] font-[#111111] text-gray-500">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500">
                       Contact us
                     </p>
                     <div className="space-y-1">

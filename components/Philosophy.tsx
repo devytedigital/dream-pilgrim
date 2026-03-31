@@ -6,17 +6,20 @@ import { motion } from "framer-motion";
 
 const Philosophy = () => {
   return (
-    <section className="relative w-full min-h-screen bg-[#FDFBF9] overflow-hidden flex items-center py-24 md:py-0">
+    <section
+      id="philosophy"
+      className="relative w-full min-h-screen md:h-screen bg-[#FDFBF9] overflow-hidden flex items-center py-20 md:py-0"
+    >
       <div className="w-full px-6 md:px-12 max-w-[1500px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
           {/* Left Column: Text Content */}
-          <div className="flex flex-col h-full justify-center order-2 md:order-1">
+          <div className="flex flex-col h-full justify-center order-2 md:order-1 text-center md:text-left items-center md:items-start">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="text-[clamp(1.5rem,3.5vw,2.75rem)] font-light tracking-[0.02em] font-spectral leading-[1.2] text-[#111111] uppercase mb-20 md:mb-32 max-w-2xl"
+              className="text-[clamp(1.5rem,3.5vw,2.75rem)] font-light text-left tracking-[0.02em] font-spectral leading-[1.2] text-[#111111] uppercase mb-12 md:mb-32 max-w-2xl"
             >
               Dream pilgrim destinations are places to stay, engage and connect
               with yourself, your surroundings, and a new community.
@@ -28,7 +31,7 @@ const Philosophy = () => {
                 whileInView={{ opacity: 0.8, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-                className="text-sm md:text-base font-manrope max-w-sm leading-relaxed text-[#4A4A4A] font-light"
+                className="text-sm md:text-base font-manrope max-w-sm leading-relaxed text-[#4A4A4A] font-light text-left"
               >
                 Our curated retreats and boutique stays are spaces where
                 like-minded individuals come together, connect with a global
@@ -39,20 +42,20 @@ const Philosophy = () => {
           </div>
 
           {/* Right Column: Arched Image Profile - High-End Reveal */}
-          <div className="relative order-1 md:order-2 flex justify-end">
+          <div className="relative order-1 md:order-2 flex justify-center md:justify-end">
             <motion.div
-              initial={{ opacity: 0, clipPath: "inset(0% 100% 0% 0%)" }}
+              initial={{ opacity: 0, clipPath: "inset(100% 0% 0% 0%)" }}
               whileInView={{ opacity: 1, clipPath: "inset(0% 0% 0% 0%)" }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-              className="relative w-full max-w-[580px] aspect-[10/14] rounded-t-[500px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] group"
+              className="relative w-full max-w-[500px] max-h-[50vh] md:max-h-[70vh] aspect-[10/14]  overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] group"
             >
               <Image
                 src="https://res.cloudinary.com/ditmvxlon/image/upload/v1774639289/oliver-sjostrom-CihXnvELE00-unsplash_zqr8yj.jpg"
                 alt="Dream Pilgrim Experience"
                 fill
                 priority
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-[#111111]/5" />
             </motion.div>

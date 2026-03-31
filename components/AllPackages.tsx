@@ -108,7 +108,7 @@ const allPackages = [
 
 const AllPackages = () => {
   return (
-    <section className="py-20 md:py-32 bg-[#F9FAFB] text-[#111111]">
+    <section id="all-packages" className="py-20 md:py-32 bg-[#F9FAFB] text-[#111111]">
       <div className="w-full px-6 md:px-12">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8 mb-16 md:mb-24 px-1">

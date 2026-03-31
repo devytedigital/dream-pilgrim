@@ -12,7 +12,10 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative  h-screen flex items-center justify-center p-6 md:p-12 overflow-hidden bg-[#111111]">
+      <section
+        id="about-hero"
+        className="relative  h-screen flex items-center justify-center p-6 md:p-12 overflow-hidden bg-[#111111]"
+      >
         <div className="absolute inset-0 opacity-40">
           <Image
             src="https://res.cloudinary.com/ditmvxlon/image/upload/v1774681149/minimalist-green-mountain-landscape-mist_1_dnaxxf.jpg"
@@ -34,67 +37,71 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story & Philosophy Section */}
-      <section className="py-24 md:py-48 px-6 md:px-12 bg-[#F9FAFB] ">
-        <div className="max-w-[1500px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+      {/* Story & Philosophy Section - Full Screen Narrative */}
+      <section
+        id="about-story"
+        className="relative py-12 md:py-0 md:h-screen flex items-center bg-[#F9FAFB] px-6 md:px-12 overflow-hidden "
+      >
+        <div className="max-w-[1500px] mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center">
             {/* Story Text */}
-            <div className="space-y-12 md:space-y-20 flex flex-col justify-center order-2 lg:order-1">
+            <div className="flex flex-col h-full justify-center space-y-8 md:space-y-12 order-2 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
-                className="space-y-8"
+                className="space-y-6 md:space-y-8"
               >
-                <h2 className="text-[clamp(2rem,5vw,4rem)] font-normal leading-[1.1] tracking-tight text-[#111111] font-spectral">
-                  Crafting spaces for the <br className="hidden md:block" />
-                  concious explorer.
-                </h2>
+                <div className="space-y-4">
+                  <h2 className="text-[clamp(2rem,5vw,4rem)] font-normal leading-[1.05] tracking-tight text-[#111111] font-spectral">
+                    Crafting spaces for the <br />
+                    conscious explorer.
+                  </h2>
+                </div>
                 <div className="space-y-6 max-w-xl">
-                  <p className="text-base md:text-lg text-[#4A4A4A] leading-relaxed font-manrope font-light">
+                  <p className="text-sm md:text-base text-[#4A4A4A] leading-relaxed font-manrope font-light">
                     Founded in the pursuit of architectural silence, Dream
                     Pilgrim was born to challenge the vertical pace of modern
                     tourism. We believe travel is not just about the distance
                     covered, but the depth of the discovery.
                   </p>
-                  <p className="text-base md:text-lg text-[#4A4A4A] leading-relaxed font-manrope font-light">
+                  <p className="text-sm md:text-base text-[#4A4A4A] leading-relaxed font-manrope font-light text-sm md:text-base text-[#4A4A4A] leading-relaxed font-manrope font-light">
                     Our curated retreats and boutique stays are sanctuaries
                     where like-minded individuals come together to connect with
-                    reality, their surroundings, and a global community of
-                    dreamers.
+                    reality, their surroundings, and a global community.
                   </p>
                 </div>
               </motion.div>
 
-              <div className="grid grid-cols-2 gap-8 pt-8">
+              <div className="grid grid-cols-2 gap-12 pt-8 md:pt-12">
                 <div className="space-y-2">
-                  <span className="text-2xl md:text-3xl font-normal text-[#111111] font-spectral">
+                  <span className="text-3xl md:text-4xl font-normal text-[#111111] font-spectral">
                     12+
                   </span>
-                  <p className="text-[10px] uppercase tracking-widest text-gray-400 font-manrope font-black">
+                  <p className="text-[9px] uppercase tracking-[0.2em] text-gray-400 font-manrope font-black">
                     Destinations
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-2xl md:text-3xl font-normal text-[#111111] font-spectral">
+                  <span className="text-3xl md:text-4xl font-normal text-[#111111] font-spectral">
                     5K+
                   </span>
-                  <p className="text-[10px] uppercase tracking-widest text-gray-400 font-manrope font-black">
+                  <p className="text-[9px] uppercase tracking-[0.2em] text-gray-400 font-manrope font-black">
                     Pilgrims Served
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Architectural Profile Image */}
-            <div className="relative order-1 lg:order-2 flex justify-end">
+            {/* Slender Architectural Profile - High-End Vertical Arch */}
+            <div className="relative order-1 lg:order-2 flex justify-end items-center h-full sm:pt-12 md:py-0">
               <motion.div
                 initial={{ opacity: 0, clipPath: "inset(0% 100% 0% 0%)" }}
                 whileInView={{ opacity: 1, clipPath: "inset(0% 0% 0% 0%)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-                className="relative w-full max-w-[650px] aspect-[4/5] rounded-t-[500px] overflow-hidden shadow-3xl"
+                className="relative w-full max-w-[480px] aspect-[8/12] h-[70vh] md:h-[85vh] rounded-t-[600px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] grayscale-[0.1] hover:grayscale-0 transition-all duration-1000"
               >
                 <Image
                   src="https://res.cloudinary.com/ditmvxlon/image/upload/v1774681672/alan-quirvan-dUkF8msWoLs-unsplash_cv1nwt.jpg"
@@ -110,7 +117,7 @@ export default function AboutPage() {
       </section>
 
       {/* Discovery Values - Museum Grid */}
-      <section className="py-24 md:py-48 px-6 md:px-12 bg-[#F9FAFB] border-y border-gray-100">
+      <section id="about-values" className="py-24 md:py-48 px-6 md:px-12 bg-[#F9FAFB] border-y border-gray-100">
         <div className="max-w-[1500px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -170,7 +177,10 @@ export default function AboutPage() {
       </section>
 
       {/* Full-width Call to Action Image */}
-      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section
+        id="about-cta"
+        className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden"
+      >
         <Image
           src="https://res.cloudinary.com/ditmvxlon/image/upload/v1774681867/fadhil-abhimantra-t0dl9hUgHHw-unsplash_v2ebfb.jpg"
           alt="The Journey Begins"

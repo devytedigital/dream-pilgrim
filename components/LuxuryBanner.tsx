@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const LuxuryBanner = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section id="luxury-banner" className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
