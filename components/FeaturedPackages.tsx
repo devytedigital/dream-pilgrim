@@ -108,13 +108,6 @@ const FeaturedPackages = () => {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Decorative brand icon like in screenshot - only on mobile card 1 */}
-              <div className="md:hidden absolute bottom-6 left-6 w-12 h-12 bg-black/80 backdrop-blur-md rounded-full flex items-center justify-center">
-                <div className="w-5 h-5 border-2 border-white rounded-full relative">
-                  <div className="w-1.5 h-1.5 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                </div>
-              </div>
 
               <span className="absolute bottom-6 right-6 text-white text-[10px] font-medium px-4 py-2 bg-[#111111]/30 backdrop-blur-md rounded-full border border-white/10 uppercase tracking-widest block">
                 {packages[0].location}
@@ -124,7 +117,9 @@ const FeaturedPackages = () => {
               <h4 className="text-xl md:text-2xl font-semibold tracking-tight mb-1 font-outfit">
                 {packages[0].title}
               </h4>
-              <p className="text-gray-400 text-sm font-manrope">{packages[0].subtitle}</p>
+              <p className="text-gray-400 text-sm font-manrope">
+                {packages[0].subtitle}
+              </p>
             </div>
           </motion.div>
 
@@ -143,7 +138,7 @@ const FeaturedPackages = () => {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
+
               <span className="absolute bottom-6 right-6 text-white text-[10px] font-medium px-4 py-2 bg-[#111111]/30 backdrop-blur-md rounded-full border border-white/10 uppercase tracking-widest block">
                 {packages[1].location}
               </span>
@@ -152,7 +147,9 @@ const FeaturedPackages = () => {
               <h4 className="text-xl md:text-2xl font-semibold tracking-tight mb-1 font-outfit">
                 {packages[1].title}
               </h4>
-              <p className="text-gray-400 text-sm font-manrope">{packages[1].subtitle}</p>
+              <p className="text-gray-400 text-sm font-manrope">
+                {packages[1].subtitle}
+              </p>
             </div>
           </motion.div>
 
@@ -170,7 +167,7 @@ const FeaturedPackages = () => {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
+
               <span className="absolute bottom-6 right-6 text-white text-[10px] font-medium px-4 py-2 bg-[#111111]/30 backdrop-blur-md rounded-full border border-white/10 uppercase tracking-widest block">
                 {packages[2].location}
               </span>
@@ -179,7 +176,9 @@ const FeaturedPackages = () => {
               <h4 className="text-xl md:text-2xl font-semibold tracking-tight mb-1 font-outfit">
                 {packages[2].title}
               </h4>
-              <p className="text-gray-400 text-sm font-manrope">{packages[2].subtitle}</p>
+              <p className="text-gray-400 text-sm font-manrope">
+                {packages[2].subtitle}
+              </p>
             </div>
           </motion.div>
         </div>
