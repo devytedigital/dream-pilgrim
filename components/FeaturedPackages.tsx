@@ -116,11 +116,11 @@ const FeaturedPackages = () => {
                 </div>
               </div>
 
-              <span className="absolute bottom-6 right-6 text-white text-[10px] font-medium px-4 py-2 bg-[#111111]/30 backdrop-blur-md rounded-full border border-white/10 uppercase tracking-widest md:block hidden">
+              <span className="absolute bottom-6 right-6 text-white text-[10px] font-medium px-4 py-2 bg-[#111111]/30 backdrop-blur-md rounded-full border border-white/10 uppercase tracking-widest block">
                 {packages[0].location}
               </span>
             </div>
-            <div className="px-2 md:block hidden">
+            <div className="px-2 block">
               <h4 className="text-xl md:text-2xl font-semibold tracking-tight mb-1 font-outfit">
                 {packages[0].title}
               </h4>
@@ -128,7 +128,7 @@ const FeaturedPackages = () => {
             </div>
           </motion.div>
 
-          {/* Other cards - Shown on mobile but styled like standard cards or potentially hidden if user wanted EXACT screenshot */}
+          {/* Other cards - Shown on mobile but styled like standard cards */}
           {/* Card 2 */}
           <motion.div
             style={{ y: isDesktop ? y2 : 0 }}
@@ -143,8 +143,12 @@ const FeaturedPackages = () => {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <span className="absolute bottom-6 right-6 text-white text-[10px] font-medium px-4 py-2 bg-[#111111]/30 backdrop-blur-md rounded-full border border-white/10 uppercase tracking-widest block">
+                {packages[1].location}
+              </span>
             </div>
-            <div className="px-2 md:block hidden">
+            <div className="px-2 block">
               <h4 className="text-xl md:text-2xl font-semibold tracking-tight mb-1 font-outfit">
                 {packages[1].title}
               </h4>
@@ -166,8 +170,12 @@ const FeaturedPackages = () => {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <span className="absolute bottom-6 right-6 text-white text-[10px] font-medium px-4 py-2 bg-[#111111]/30 backdrop-blur-md rounded-full border border-white/10 uppercase tracking-widest block">
+                {packages[2].location}
+              </span>
             </div>
-            <div className="px-2 md:block hidden">
+            <div className="px-2 block">
               <h4 className="text-xl md:text-2xl font-semibold tracking-tight mb-1 font-outfit">
                 {packages[2].title}
               </h4>
